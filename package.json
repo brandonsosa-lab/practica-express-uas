@@ -1,0 +1,24 @@
+{
+  "name": "practica-express-uas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonsosa-lab/practica-express-uas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/brandonsosa-lab/practica-express-uas/issues"
+  },
+  "homepage": "https://github.com/brandonsosa-lab/practica-express-uas#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
