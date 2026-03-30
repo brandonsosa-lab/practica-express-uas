@@ -1,25 +1,20 @@
 const express = require('express');
+const pool = require('./db'); // Importante: esto llama a tu archivo db.js
 const app = express();
-const port = 3000;
 
-// Ruta base
 app.get('/', (req, res) => {
-  res.send('API de Brandon Sosa funcionando');
+  res.send('API conectada a PostgreSQL');
 });
 
-// NUEVO: Endpoint /usuario
-app.get('/usuario', (req, res) => {
-  const usuario = {
-    id: 1,
-    nombre: 'Brandon Everardo Escamilla Sosa',
-    rol: 'Estudiante de Informática UAS',
-    semestre: '6to'
-  };
+// PRUEBA DE CONEXIÓN
+pool.connect()
+  .then(() => {
+    console.log('Conexión exitosa a PostgreSQL - Brandon Sosa');
+  })
+  .catch((err) => {
+    console.error('Error de conexión', err);
+  });
 
-  // Regresa el objeto en formato JSON
-  res.json(usuario);
-});
-
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+app.listen(3000, () => {
+  console.log('Servidor corriendo en http://localhost:3000');
 });
